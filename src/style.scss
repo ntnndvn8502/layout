@@ -1,0 +1,22 @@
+@import url("../node_modules/@material/button/styles.scss");
+body{
+  overflow: hidden !important;
+}
+.list-title{
+  font-size: 22px;
+  margin-block: 8px;
+  margin-inline: 0;
+}
+.fix-scrollbar > .MuiPaper-elevation {
+  scrollbar-width: none !important;
+}
+.search-btn{
+  border-radius: 0 16px 16px 0 !important;
+  border-color: #0000003b !important;
+  color: black !important;
+}
+.search-btn:hover{
+ 
+ background-color: #1976d2 !important;
+ color: white !important;
+}
