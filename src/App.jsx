@@ -31,7 +31,7 @@ export default function App() {
             >
               <h1>Hello User</h1>
               <p>Chào mừng đến với trang quản trị</p>
-              <Notification />
+              {/* <Notification /> */}
 
 
 

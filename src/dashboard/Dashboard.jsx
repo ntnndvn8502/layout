@@ -28,7 +28,10 @@ import SearchBar from './Searchbar';
 import Profile from './Profile';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import { lime, purple } from '@mui/material/colors';
 
+import DesignedPalette from './DesignPalette';
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 
 
@@ -46,12 +49,13 @@ function Copyright(props) {
   );
 }
 
-const drawerWidth = 240;
-
+const drawerWidth = 270;
+const navcolor = 'white';
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
+  background: theme.palette.primary,
   zIndex: theme.zIndex.drawer + 1,
   left: theme.spacing(7),
   width: `calc(100% -  ${theme.spacing(7)})`,
@@ -85,6 +89,7 @@ const AppBar = styled(MuiAppBar, {
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
     '& .MuiDrawer-paper': {
+      backgroundColor: theme.palette.secondary,
       position: 'relative',
       whiteSpace: 'nowrap',
       width: drawerWidth,
@@ -109,46 +114,55 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 // TODO remove, this demo shouldn't need to reset the theme.
-const defaultTheme = createTheme();
+
+
+
+
 
 export default function Dashboard() {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
   };
+  const [mode, setMode] = React.useState('light');
+  const toggleMode = () => {
+    if (mode === 'light') {
+      setMode("dark");
+    } else {
+      setMode("light");
+    }
+  }
+  const defaultTheme = createTheme(DesignedPalette(mode));
 
 
   return (
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        <AppBar sx={{ bgcolor: 'white' }} position="absolute" open={open}>
+        <AppBar sx={{ boxShadow: 'none', bgcolor: defaultTheme.palette.navbar.main, backgroundImage: 'none' }} position="absolute" open={open}>
           <Toolbar
             sx={{
               pr: '24px', // keep right padding when drawer closed
             }}
           >
             <Grid container>
-              <Grid item md={6} sx={{ display: 'flex', alignItems: 'center' }}>
+              <Grid className={defaultTheme.palette.mode === 'dark' && 'specified-btn'} item md={6} sx={{ display: 'flex', alignItems: 'center' }}>
                 <SearchBar />
               </Grid>
               <Grid item md={6}>
                 <Container sx={{ display: 'flex', flexDirection: 'row-reverse' }}>
-                  <Profile />
+                  <Profile colormode={defaultTheme.palette.mode} />
                   <Button sx={{ minWidth: 50 }} variant='text'>
-                    <Box sx={{ color: 'black' }}>
-                      <Badge color="warning" variant="dot">
-                        <NotificationsNoneIcon />
+                    <Box >
+                      <Badge color='warning' variant="dot">
+                        <NotificationsNoneIcon color='custom' />
                       </Badge>
                     </Box>
                   </Button>
-                  <Button sx={{ minWidth: 50, color: 'black' }} variant='text'>
-
-                    <DarkModeOutlinedIcon sx={{ marginTop: '3px' }} />
-
+                  <Button onClick={toggleMode} color='custom' sx={{ minWidth: 50 }} variant='text' >
+                    {mode === "light" ? <DarkModeOutlinedIcon sx={{ marginTop: '3px' }} /> : <LightModeOutlinedIcon sx={{ marginTop: '3px' }} />}
 
                   </Button>
-
                 </Container>
 
               </Grid>
@@ -174,18 +188,21 @@ export default function Dashboard() {
             </IconButton>
           </Toolbar>
           <Divider /> */}
-          <List sx={{ pt: 0 }} component="nav">
+          <List className={defaultTheme.palette.mode === 'dark' && 'specified-focus'} sx={{ pt: 0 }} component="nav">
             <MainListItems />
 
 
           </List>
-          <Box sx={{ px: 1, ml: '10px', position: 'absolute', bottom: 20, left: 0, display: 'flex', alignItems: 'center', gap: 4 }}>
-            <Avatar onClick={toggleDrawer} sx={{ width: 30, height: 30, color: 'black', cursor: 'pointer', }}>
-              {!open && <NavigateNextIcon />}
-              {open && <NavigateBeforeIcon />}
+          <Box sx={{ ml: '10px', position: 'absolute', bottom: 20, left: 0, display: 'flex', alignItems: 'center', gap: 4 }}>
+            <IconButton onClick={toggleDrawer} sx={{ cursor: 'pointer', }}>
+              <Avatar sx={{ width: 30, height: 30, color: 'black', }}>
+                {!open && <NavigateNextIcon />}
+                {open && <NavigateBeforeIcon />}
 
 
-            </Avatar>
+              </Avatar>
+            </IconButton>
+
             <span>Thu gọn</span>
 
           </Box>

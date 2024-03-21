@@ -28,7 +28,7 @@ function SearchBar() {
       <FormControl>
         <OutlinedInput
           id="component-outlined"
-
+          placeholder='Tìm kiếm chức năng bất kì'
           sx={{ height: '40px', borderRadius: 0 }}
         />
       </FormControl>

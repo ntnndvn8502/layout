@@ -19,9 +19,46 @@ body {
   color: black !important;
 }
 
+.specified-btn .search-btn {
+  color: white !important;
+  border-color: rgba(255, 255, 255, 0.231372549) !important;
+}
+
+.specified-btn .search-btn:hover {
+  background-color: rgba(255, 255, 255, 0.0784313725) !important;
+}
+
 .search-btn:hover {
   background-color: #1976d2 !important;
   color: white !important;
+}
+
+#e0.active,
+#e1.active,
+#e2.active,
+#e3.active,
+#e4.active,
+#e5.active,
+#e6.active,
+#e7.active,
+#e8.active,
+#e9.active,
+#e10.active {
+  background: var(--PasGo-Blue-20, #e8f1ff);
+}
+
+.specified-focus #e0.active,
+.specified-focus #e1.active,
+.specified-focus #e2.active,
+.specified-focus #e3.active,
+.specified-focus #e4.active,
+.specified-focus #e5.active,
+.specified-focus #e6.active,
+.specified-focus #e7.active,
+.specified-focus #e8.active,
+.specified-focus #e9.active,
+.specified-focus #e10.active {
+  background: rgba(255, 255, 255, 0.0784313725);
 }
 
 /*# sourceMappingURL=style.css.map */

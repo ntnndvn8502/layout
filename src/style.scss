@@ -1,8 +1,8 @@
 @import url("../node_modules/@material/button/styles.scss");
-body{
+body {
   overflow: hidden !important;
 }
-.list-title{
+.list-title {
   font-size: 22px;
   margin-block: 8px;
   margin-inline: 0;
@@ -10,13 +10,47 @@ body{
 .fix-scrollbar > .MuiPaper-elevation {
   scrollbar-width: none !important;
 }
-.search-btn{
+.search-btn {
   border-radius: 0 16px 16px 0 !important;
   border-color: #0000003b !important;
   color: black !important;
 }
-.search-btn:hover{
- 
- background-color: #1976d2 !important;
- color: white !important;
+.specified-btn .search-btn {
+  color: white !important;
+  border-color: #ffffff3b !important;
+}
+.specified-btn .search-btn:hover {
+  background-color: #ffffff14 !important;
+}
+.search-btn:hover {
+  background-color: #1976d2 !important;
+  color: white !important;
+}
+#e0.active,
+#e1.active,
+#e2.active,
+#e3.active,
+#e4.active,
+#e5.active,
+#e6.active,
+#e7.active,
+#e8.active,
+#e9.active,
+#e10.active {
+  background: var(--PasGo-Blue-20, #e8f1ff);
+}
+.specified-focus {
+  #e0.active,
+  #e1.active,
+  #e2.active,
+  #e3.active,
+  #e4.active,
+  #e5.active,
+  #e6.active,
+  #e7.active,
+  #e8.active,
+  #e9.active,
+  #e10.active {
+    background: #ffffff14;
+  }
 }
