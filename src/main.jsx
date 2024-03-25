@@ -4,19 +4,24 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import App from './App';
 import theme from './theme';
-import { RouterProvider,createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Dashboard from './dashboard/Dashboard';
+import Notification from './Notification';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 const router = createBrowserRouter([
   {
-    path:'/',
-    element: <Dashboard/>,
+    path: '/',
+    element: <Dashboard />,
     children: [
       {
-        path:'/',
-        element:<App/>
+        path: '/',
+        element: <Notification />
+      },
+      {
+        path: '/gian-hang',
+        element: <App />
       }
     ]
 

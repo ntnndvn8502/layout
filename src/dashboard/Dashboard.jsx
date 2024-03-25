@@ -189,7 +189,7 @@ export default function Dashboard() {
           </Toolbar>
           <Divider /> */}
           <List className={defaultTheme.palette.mode === 'dark' && 'specified-focus'} sx={{ pt: 0 }} component="nav">
-            <MainListItems />
+            <MainListItems open={open} />
 
 
           </List>
@@ -222,9 +222,10 @@ export default function Dashboard() {
           }}
         >
           <Toolbar />
-          <Container>
+          <Box sx={{ p: '10px' }}>
             <Outlet />
-          </Container>
+          </Box>
+
           {/* <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
               

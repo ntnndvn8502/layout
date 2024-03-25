@@ -13,40 +13,24 @@ import { Link } from '@mui/material';
 import { Button } from '@mui/material';
 import "./style.css";
 import Notification from './Notification';
+import HeadTabs from './dashboard/HeadTabs';
+import CommonInfo from './dashboard/CommonInfo';
 
 export default function App() {
-  let array = [];
-  for (let i = 1; i <= 5; i++) {
-    array.push(
-      <Container sx={{ mt: 5, mb: 5 }} maxWidth="lg">
-        <Grid container spacing={2}>
-          <Grid item xs={12} >
-            <Paper
-              sx={{
-                p: 2,
-                display: 'flex',
-                flexDirection: 'column',
-
-              }}
-            >
-              <h1>Hello User</h1>
-              <p>Chào mừng đến với trang quản trị</p>
-              {/* <Notification /> */}
 
 
 
-            </Paper>
-          </Grid>
-        </Grid>
 
-      </Container>
 
-    )
-  }
   return (
     <>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between' }} >
+        <h2 style={{ margin: 0 }}>Gian hàng và mặt hàng</h2>
+        <Button sx={{ borderRadius: '10px' }} color='warning' variant="outlined">Cập nhật</Button>
+      </Box>
+      <HeadTabs />
+      <CommonInfo />
 
-      {array}
 
     </>
 

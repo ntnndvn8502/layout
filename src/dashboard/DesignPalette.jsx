@@ -17,6 +17,15 @@ const DesignedPalette = (mode) => ({
                     primary: grey[900],
                     secondary: grey[800],
                 },
+                menu: {
+                    main: '#555555',
+                    dark: '#333333'
+                },
+                btn: {
+                    main: '#2B2F33',
+                    border: '#DAE1F5',
+                    selected: '#F01B23'
+                }
             }
             : {
                 // palette values for dark mode
@@ -32,6 +41,15 @@ const DesignedPalette = (mode) => ({
                     primary: '#fff',
                     secondary: grey[500],
                 },
+                menu: {
+                    main: grey[300],
+                    dark: grey[50]
+                },
+                btn: {
+                    main: '#ffffff',
+                    border: '#DAE1F5',
+                    selected: '#F01B23'
+                }
             }),
     },
 });

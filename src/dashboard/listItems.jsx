@@ -9,17 +9,33 @@ import PeopleIcon from '@mui/icons-material/People';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
-import { SupervisorAccount, Handshake, Inventory, Discount, Monitor, Article, Image, Dataset, Bookmark } from '@mui/icons-material';
+import { SupervisorAccount, Handshake, Inventory, Discount, Monitor, Article, Image, Dataset, Bookmark, List } from '@mui/icons-material';
 import HomeIcon from '@mui/icons-material/Home';
 import SettingsIcon from '@mui/icons-material/Settings';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import { Collapse, IconButton } from '@mui/material';
+import { Link } from 'react-router-dom';
 
-export function MainListItems() {
+export function MainListItems(prop) {
   const [active, setActive] = React.useState('');
 
   const handleActive = (event) => {
     setActive(event.currentTarget.getAttribute("id"));
-    console.log(active);
+
   };
+  var open = prop.open;
+  const [open1, setOpen1] = React.useState(false);
+  const handleOpen1 = (event) => {
+    setOpen1(!open1);
+  }
+  if (prop.open) {
+    console.log('true');
+
+  } else {
+    console.log('false');
+
+  }
   return (
     <React.Fragment>
       <ListItemButton id='e0' sx={{ display: 'flex', height: '65px' }} className={active === 'e0' && 'active'}>
@@ -29,19 +45,32 @@ export function MainListItems() {
         <ListItemText>
           <h1 className='list-title'>Quản trị Pasgo</h1>
         </ListItemText>
-      </ListItemButton>
+      </ListItemButton >
       <ListItemButton id='e1' onClick={handleActive} className={active === 'e1' && 'active'}>
         <ListItemIcon>
           <Monitor />
         </ListItemIcon>
         <ListItemText primary="Bảng điều khiển" />
+        <IconButton size='small' onClick={handleOpen1}>
+          {open1 === true ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
+        </IconButton>
+
       </ListItemButton>
-      <ListItemButton id='e2' onClick={handleActive} className={active === 'e2' && 'active'}>
-        <ListItemIcon>
-          <SupervisorAccount />
-        </ListItemIcon>
-        <ListItemText primary="Quản lí tài khoản" />
-      </ListItemButton>
+
+      {open && <Collapse in={open1} timeout="auto" unmountOnExit>
+        <ListItemButton sx={{ pl: 9 }}>
+          <ListItemText primary="Starred" />
+        </ListItemButton>
+      </Collapse>}
+      <Link style={{ color: 'unset', textDecoration: 'none' }} to="/gian-hang">
+        <ListItemButton id='e2' onClick={handleActive} className={active === 'e2' && 'active'}>
+          <ListItemIcon>
+            <SupervisorAccount />
+          </ListItemIcon>
+          <ListItemText primary="Quản lí tài khoản" />
+        </ListItemButton>
+      </Link>
+
       <ListItemButton id='e3' onClick={handleActive} className={active === 'e3' && 'active'}>
         <ListItemIcon>
           <SettingsIcon />
