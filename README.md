@@ -14,7 +14,7 @@ cd material-ui-vite
 Install it and run:
 
 ```bash
-npm install
+npm install --force
 npm run dev
 ```
 
