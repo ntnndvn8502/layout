@@ -4,7 +4,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { Card } from '@mui/material';
 import FullWCard from './FullWCard';
-const StyledTabs = styled((props) => (
+export const StyledTabs = styled((props) => (
   <Tabs
     {...props}
     TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
@@ -22,7 +22,7 @@ const StyledTabs = styled((props) => (
   },
 });
 
-const StyledTab = styled(Tab)(({ theme }) => ({
+export const StyledTab = styled(Tab)(({ theme }) => ({
   textTransform: 'none',
   fontSize: '16px',
   color: theme.palette.menu.main,
@@ -34,7 +34,7 @@ const StyledTab = styled(Tab)(({ theme }) => ({
 }),
 );
 
-export default function CustomizedTabs() {
+export default function HeadTabs() {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {

@@ -15,6 +15,7 @@ import "./style.css";
 import Notification from './Notification';
 import HeadTabs from './dashboard/HeadTabs';
 import CommonInfo from './dashboard/CommonInfo';
+import Summary from './dashboard/Summary';
 
 export default function App() {
 
@@ -30,6 +31,7 @@ export default function App() {
       </Box>
       <HeadTabs />
       <CommonInfo />
+      <Summary />
 
 
     </>
