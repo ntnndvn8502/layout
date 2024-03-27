@@ -3,6 +3,10 @@ import { Box, Grid, FormControlLabel, Checkbox } from "@mui/material";
 import { StyledTab, StyledTabs } from "./HeadTabs";
 import * as React from 'react';
 import InputImage from "./InputImage";
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 
 function Summary() {
@@ -12,6 +16,11 @@ function Summary() {
         if (newList !== null) {
             setList(newList);
         }
+    };
+    const [cor, setCor] = React.useState('');
+
+    const handleCor = (event) => {
+        setCor(event.target.value);
     };
     return (
         <FullWCard>
@@ -38,7 +47,7 @@ function Summary() {
                     </Grid>
                 </Grid>
             </Box>
-            <Box sx={{ mt: 1 }}>
+            <Box sx={{ mt: 2 }}>
                 <div>Ảnh gian hàng</div>
                 <Box>
                     <StyledTabs
@@ -52,10 +61,31 @@ function Summary() {
 
                     </StyledTabs>
                 </Box>
-                <Box>
+                <Box sx={{ mt: 1 }}>
                     <InputImage />
                 </Box>
 
+            </Box>
+            <Box sx={{ mt: 3 }}>
+                <div>Trạng thái mặt hàng</div>
+                <Box>
+                    <RadioGroup
+                        sx={{ display: 'flex', gap: '32px', flexDirection: 'row', mt: 1 }}
+                        name="controlled-radio-buttons-group"
+                        value={cor}
+                        onChange={handleCor}
+                    >
+                        <FormControlLabel value="1" control={<Radio color="success" />} label="Đang hợp tác" />
+                        <FormControlLabel value="2" control={<Radio color="success" />} label="Dừng hợp tác" />
+                        <FormControlLabel value="3" control={<Radio color="success" />} label="Đang đàm phán" />
+                        <FormControlLabel value="4" control={<Radio color="success" />} label="Sắp hợp tác" />
+                    </RadioGroup>
+                </Box>
+            </Box>
+            <Box sx={{ mt: 2 }}>
+                <div>Nội dung bài viết</div>
+                <CKEditor editor={ClassicEditor}>
+                </CKEditor>
             </Box>
         </FullWCard>
     )

@@ -6,7 +6,7 @@ function Notification() {
   return (
     <Card sx={{ bgcolor: '#f2dede', p: 2, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
       <Box>
-        <span>Thông báo đã hết hạn</span>
+        <span>Ấn vào quản lí tài khoản để xem thêm</span>
         <Link sx={{ ml: 1 }} href="#" underline="hover">
           {'Xem thêm'}
         </Link>

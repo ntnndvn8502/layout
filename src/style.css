@@ -68,4 +68,43 @@ body {
   border-radius: 8px !important;
 }
 
+.rug {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 16px;
+}
+.rug .imgAdd-btn {
+  padding: 20px;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rug .imgAdd-btn .imgAdd-btn-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rug .rug-items.__card {
+  display: flex !important;
+  gap: 16px !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+}
+.rug .rug-items.__card .rug-item .rug-card {
+  height: 100px;
+  width: 100px;
+  margin: 0;
+}
+.rug .rug-items.__card .rug-item .rug-card .rug-card-refresh {
+  display: none !important;
+}
+
+.ck-content {
+  min-height: 150px !important;
+  max-height: 300px !important;
+}
+
 /*# sourceMappingURL=style.css.map */

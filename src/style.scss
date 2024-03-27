@@ -60,3 +60,42 @@ body {
   margin-inline: 8px !important;
   border-radius: 8px !important;
 }
+.rug {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 16px;
+  .imgAdd-btn {
+    padding: 20px;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .imgAdd-btn-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .rug-items.__card {
+    display: flex !important;
+    gap: 16px !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    .rug-item {
+      .rug-card {
+        height: 100px;
+        width: 100px;
+        margin: 0;
+        .rug-card-refresh {
+          display: none !important;
+        }
+      }
+    }
+  }
+}
+.ck-content {
+  min-height: 150px !important;
+  max-height: 300px !important;
+}
