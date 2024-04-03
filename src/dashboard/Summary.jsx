@@ -7,6 +7,8 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import LimitedInput from "./LimitedInput";
+import CustomSwitch from "./CustomSwitch";
 
 
 function Summary() {
@@ -86,6 +88,17 @@ function Summary() {
                 <div>Nội dung bài viết</div>
                 <CKEditor editor={ClassicEditor}>
                 </CKEditor>
+            </Box>
+            <Box sx={{ mt: 2 }}>
+                <div>Nguyên liệu, món chính</div>
+                <LimitedInput length={70} />
+            </Box>
+            <Box sx={{ mt: 2 }}>
+                <div>Hiển thị lên trang chủ</div>
+                <FormControlLabel sx={{ ml: 1, my: 1 }}
+                    control={<CustomSwitch />}
+                    label="Hiện thị trang chủ"
+                />
             </Box>
         </FullWCard>
     )

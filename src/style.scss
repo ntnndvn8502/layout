@@ -99,3 +99,38 @@ body {
   min-height: 150px !important;
   max-height: 300px !important;
 }
+.limit {
+  width: 100%;
+  position: relative;
+  margin-top: 8px;
+  #l-input {
+    width: 100%;
+    display: flex;
+    padding: 14px 16px;
+    align-items: center;
+    font-size: 16px;
+    align-self: stretch;
+    border-radius: 4px;
+    border: 1px solid var(--PasGo-Ink-20, #dae1f5);
+  }
+  #l-input:hover {
+    border-color: black;
+  }
+  #l-input:focus-visible {
+    // border-color: #3779eb !important;
+    outline: 0;
+    box-shadow: none;
+    border: #1976d2 2px solid;
+  }
+  .l-index {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 20px;
+    span {
+      font-size: 16px;
+      color: var(--PasGo-Black-40, rgba(43, 47, 51, 0.4));
+    }
+  }
+}
