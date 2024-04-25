@@ -16,6 +16,8 @@ import Notification from './Notification';
 import HeadTabs from './dashboard/HeadTabs';
 import CommonInfo from './dashboard/CommonInfo';
 import Summary from './dashboard/Summary';
+import Regulation from './dashboard/Regulation';
+
 
 export default function App() {
 
@@ -32,6 +34,8 @@ export default function App() {
       <HeadTabs />
       <CommonInfo />
       <Summary />
+      <Regulation />
+
 
 
     </>

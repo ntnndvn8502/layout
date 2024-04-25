@@ -1,0 +1,48 @@
+<html>
+  <head></head>
+  <body>
+    <ul class="div">
+      Hello
+      <li>
+        A
+        <ul>
+          <li>
+            I
+            <ul>
+              <li onclick="Show(event)">1</li>
+              <li onclick="Show(event)">2</li>
+            </ul>
+          </li>
+          <li onclick="Show(event)">II</li>
+          <li onclick="Show(event)">III</li>
+        </ul>
+      </li>
+      <li>B</li>
+      <li>C</li>
+    </ul>
+    <script>
+      function Show() {
+        var currentElement = event.target; // Đảm bảo rằng bạn có thể truy cập vào phần tử hiện tại thông qua event.target
+        var parents = [];
+        var show = [event.target];
+
+        while (currentElement && !currentElement.classList.contains("div")) {
+          parents.push(currentElement.parentNode);
+          if (currentElement.parentNode.tagName === "LI") {
+            show.push(currentElement.parentNode);
+          }
+          currentElement = currentElement.parentNode;
+        }
+        show.forEach((element) => {
+          if (element.getElementsByTagName("ul").length > 0) {
+            const string = element.querySelector("li > ul").innerText;
+            const result = element.innerText.replace(string, "");
+            console.log(result.trim());
+          } else {
+            console.log(element.innerText);
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

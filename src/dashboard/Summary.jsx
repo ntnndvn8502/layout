@@ -9,6 +9,7 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import LimitedInput from "./LimitedInput";
 import CustomSwitch from "./CustomSwitch";
+import MultilevelList from "./MultilevelList";
 
 
 function Summary() {
@@ -95,10 +96,13 @@ function Summary() {
             </Box>
             <Box sx={{ mt: 2 }}>
                 <div>Hiển thị lên trang chủ</div>
-                <FormControlLabel sx={{ ml: 1, my: 1 }}
+                <FormControlLabel sx={{ ml: 1, mt: 1 }}
                     control={<CustomSwitch />}
                     label="Hiện thị trang chủ"
                 />
+            </Box>
+            <Box sx={{ my: 1 }}>
+                <MultilevelList />
             </Box>
         </FullWCard>
     )

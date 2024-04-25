@@ -67,8 +67,8 @@ body {
   gap: 16px;
   .imgAdd-btn {
     padding: 20px;
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,8 +85,8 @@ body {
     margin: 0 !important;
     .rug-item {
       .rug-card {
-        height: 100px;
-        width: 100px;
+        height: 120px;
+        width: 120px;
         margin: 0;
         .rug-card-refresh {
           display: none !important;
@@ -133,4 +133,53 @@ body {
       color: var(--PasGo-Black-40, rgba(43, 47, 51, 0.4));
     }
   }
+}
+#RuleContent {
+  max-width: 100%;
+  min-width: 100%;
+  padding: 16px;
+  border-radius: 4px;
+  border: 1px solid var(--PasGo-Ink-20, #dae1f5);
+  margin-top: 8px;
+}
+#RuleContent:hover {
+  border-color: black;
+}
+#RuleContent:focus-visible {
+  outline: 0;
+  box-shadow: none;
+  border: #1976d2 2px solid;
+}
+
+.menu {
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+.menu-right {
+  left: 100% !important;
+  top: -13px !important;
+}
+.dish-list {
+  padding: 0;
+  margin: 0;
+}
+#openModal {
+  width: 250px;
+  display: flex;
+  padding: 14px 16px;
+  align-items: center;
+  font-size: 16px;
+  align-self: stretch;
+  border-radius: 4px;
+  border: 1px solid var(--PasGo-Ink-20, #dae1f5);
+  cursor: pointer;
+}
+#openModal:hover {
+  border-color: black;
+}
+#openModal:focus-visible {
+  // border-color: #3779eb !important;
+  outline: 0;
+  box-shadow: none;
+  border: #1976d2 2px solid;
 }

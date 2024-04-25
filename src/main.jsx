@@ -7,6 +7,7 @@ import theme from './theme';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Dashboard from './dashboard/Dashboard';
 import Notification from './Notification';
+import ProTip from './ProTip';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
       {
         path: '/gian-hang',
         element: <App />
+      },
+      {
+        path: '/bang-dieu-khien',
+        element: <ProTip />
+
       }
     ]
 

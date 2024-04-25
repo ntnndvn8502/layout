@@ -1,0 +1,87 @@
+{
+  "regulation": [
+    {
+      "name": "Thanh toán và giá cả",
+      "content": [
+        "Quý khách hàng phải thanh toán trước khi tham gia dùng bữa",
+        "Giá cả được quy định cụ thể và không bao gồm thuế và phí phụ trội(nếu có)."
+      ],
+      "id": "8984"
+    },
+    {
+      "name": "Chỗ để xe",
+      "content": [
+        "Quý khách hàng phải thanh toán trước khi tham gia dùng bữa",
+        "Giá cả được quy định cụ thể và không bao gồm thuế và phí phụ trội(nếu có)."
+      ],
+      "id": "0008"
+    },
+    {
+      "id": "aa60",
+      "name": "nghia",
+      "content": [
+        "Hello",
+        "How are you"
+      ]
+    },
+    {
+      "id": "656c",
+      "name": "nghia",
+      "content": [
+        "2222",
+        "2222"
+      ]
+    },
+    {
+      "id": "88e3",
+      "name": "nghia",
+      "content": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "id": "df81",
+      "name": "nghia",
+      "content": [
+        "hello",
+        "hi"
+      ]
+    },
+    {
+      "id": "779b",
+      "name": "nghia",
+      "content": [
+        "hello"
+      ]
+    },
+    {
+      "id": "960d",
+      "name": "nghia",
+      "content": [
+        "a"
+      ]
+    },
+    {
+      "id": "4c68",
+      "name": "a",
+      "content": [
+        "r"
+      ]
+    },
+    {
+      "id": "43b7",
+      "name": "a",
+      "content": [
+        "g"
+      ]
+    },
+    {
+      "id": "0132",
+      "name": "nghia",
+      "content": [
+        "hello"
+      ]
+    }
+  ]
+}

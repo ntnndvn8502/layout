@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function getFirstListItemContent() {
+        // Lấy thẻ <li> đầu tiên
+        const firstListItem = document.querySelector("li");
+
+        // Lấy nội dung của thẻ <li>
+        const content = firstListItem.textContent.trim();
+
+        // Hiển thị nội dung "A"
+        console.log(content);
+      }
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li>
+        A
+        <ul>
+          <li onclick="Show(event)">I</li>
+          <li onclick="Show(event)">II</li>
+          <li onclick="Show(event)">III</li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- Gọi hàm để lấy nội dung của thẻ <li> -->
+    <script>
+      getFirstListItemContent();
+    </script>
+  </body>
+</html>

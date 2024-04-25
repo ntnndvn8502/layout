@@ -18,6 +18,7 @@
     "@mui/x-charts": "^6.19.5",
     "react": "latest",
     "react-dom": "latest",
+    "react-multilevel-dropdown": "^4.0.0",
     "react-upload-gallery": "^0.4.1",
     "sass": "^1.72.0"
   },

@@ -38,14 +38,17 @@ export function MainListItems(prop) {
   }
   return (
     <React.Fragment>
-      <ListItemButton id='e0' sx={{ display: 'flex', height: '65px' }} className={active === 'e0' && 'active'}>
-        <ListItemIcon>
-          <img src='/pasgo.png' alt='Logo' width={40} height={40} />
-        </ListItemIcon>
-        <ListItemText>
-          <h1 className='list-title'>Quản trị Pasgo</h1>
-        </ListItemText>
-      </ListItemButton >
+      <Link style={{ color: 'unset', textDecoration: 'none' }} to="/gian-hang">
+        <ListItemButton id='e0' sx={{ display: 'flex', height: '65px' }} className={active === 'e0' && 'active'}>
+          <ListItemIcon>
+            <img src='/pasgo.png' alt='Logo' width={40} height={40} />
+          </ListItemIcon>
+          <ListItemText>
+            <h1 className='list-title'>Quản trị Pasgo</h1>
+          </ListItemText>
+        </ListItemButton >
+      </Link>
+
       <ListItemButton id='e1' onClick={handleActive} className={active === 'e1' && 'active'}>
         <ListItemIcon>
           <Monitor />
@@ -58,9 +61,12 @@ export function MainListItems(prop) {
       </ListItemButton>
 
       {open && <Collapse in={open1} timeout="auto" unmountOnExit>
-        <ListItemButton sx={{ pl: 9 }}>
-          <ListItemText primary="Starred" />
-        </ListItemButton>
+        <Link style={{ color: 'unset', textDecoration: 'none' }} to="/bang-dieu-khien">
+          <ListItemButton sx={{ pl: 9 }}>
+            <ListItemText primary="Starred" />
+          </ListItemButton>
+        </Link>
+
       </Collapse>}
       <Link style={{ color: 'unset', textDecoration: 'none' }} to="/gian-hang">
         <ListItemButton id='e2' onClick={handleActive} className={active === 'e2' && 'active'}>
@@ -70,55 +76,71 @@ export function MainListItems(prop) {
           <ListItemText primary="Quản lí tài khoản" />
         </ListItemButton>
       </Link>
+      <Link style={{ color: 'unset', textDecoration: 'none' }} to="/">
+        <ListItemButton id='e3' onClick={handleActive} className={active === 'e3' && 'active'}>
+          <ListItemIcon>
+            <SettingsIcon />
+          </ListItemIcon>
+          <ListItemText primary="Cài đặt" />
+        </ListItemButton>
+      </Link>
 
-      <ListItemButton id='e3' onClick={handleActive} className={active === 'e3' && 'active'}>
-        <ListItemIcon>
-          <SettingsIcon />
-        </ListItemIcon>
-        <ListItemText primary="Cài đặt" />
-      </ListItemButton>
-      <ListItemButton id='e4' onClick={handleActive} className={active === 'e4' && 'active'}>
-        <ListItemIcon>
-          <Discount />
-        </ListItemIcon>
-        <ListItemText primary="Tin khuyến mãi" />
-      </ListItemButton>
-      <ListItemButton id='e5' onClick={handleActive} className={active === 'e5' && 'active'}>
-        <ListItemIcon>
-          <HomeIcon />
-        </ListItemIcon>
-        <ListItemText primary="Trang chủ khách hàng" />
-      </ListItemButton>
-      <ListItemButton id='e6' onClick={handleActive} className={active === 'e6' && 'active'}>
-        <ListItemIcon>
-          <Article />
-        </ListItemIcon>
-        <ListItemText primary="Blog" />
-      </ListItemButton>
-      <ListItemButton id='e7' onClick={handleActive} className={active === 'e7' && 'active'}>
-        <ListItemIcon>
-          <Image />
-        </ListItemIcon>
-        <ListItemText primary="Ảnh" />
-      </ListItemButton>
-      <ListItemButton id='e8' onClick={handleActive} className={active === 'e8' && 'active'}>
-        <ListItemIcon>
-          <Dataset />
-        </ListItemIcon>
-        <ListItemText primary="Dữ liệu" />
-      </ListItemButton>
-      <ListItemButton id='e9' onClick={handleActive} className={active === 'e9' && 'active'}>
-        <ListItemIcon>
-          <Bookmark />
-        </ListItemIcon>
-        <ListItemText primary="Thẻ tag" />
-      </ListItemButton>
-      <ListItemButton id='e10' onClick={handleActive} className={active === 'e10' && 'active'}>
-        <ListItemIcon>
-          <Handshake />
-        </ListItemIcon>
-        <ListItemText primary="Đối tác" />
-      </ListItemButton>
+      <Link style={{ color: 'unset', textDecoration: 'none' }} to="/">
+        <ListItemButton id='e4' onClick={handleActive} className={active === 'e4' && 'active'}>
+          <ListItemIcon>
+            <Discount />
+          </ListItemIcon>
+          <ListItemText primary="Tin khuyến mãi" />
+        </ListItemButton>
+      </Link>
+      <Link style={{ color: 'unset', textDecoration: 'none' }} to="/">
+        <ListItemButton id='e5' onClick={handleActive} className={active === 'e5' && 'active'}>
+          <ListItemIcon>
+            <HomeIcon />
+          </ListItemIcon>
+          <ListItemText primary="Trang chủ khách hàng" />
+        </ListItemButton>
+      </Link>
+      <Link style={{ color: 'unset', textDecoration: 'none' }} to="/">
+        <ListItemButton id='e6' onClick={handleActive} className={active === 'e6' && 'active'}>
+          <ListItemIcon>
+            <Article />
+          </ListItemIcon>
+          <ListItemText primary="Blog" />
+        </ListItemButton>
+      </Link>
+      <Link style={{ color: 'unset', textDecoration: 'none' }} to="/">
+        <ListItemButton id='e7' onClick={handleActive} className={active === 'e7' && 'active'}>
+          <ListItemIcon>
+            <Image />
+          </ListItemIcon>
+          <ListItemText primary="Ảnh" />
+        </ListItemButton>
+      </Link>
+      <Link style={{ color: 'unset', textDecoration: 'none' }} to="/">
+        <ListItemButton id='e8' onClick={handleActive} className={active === 'e8' && 'active'}>
+          <ListItemIcon>
+            <Dataset />
+          </ListItemIcon>
+          <ListItemText primary="Dữ liệu" />
+        </ListItemButton>
+      </Link>
+      <Link style={{ color: 'unset', textDecoration: 'none' }} to="/">
+        <ListItemButton id='e9' onClick={handleActive} className={active === 'e9' && 'active'}>
+          <ListItemIcon>
+            <Bookmark />
+          </ListItemIcon>
+          <ListItemText primary="Thẻ tag" />
+        </ListItemButton>
+      </Link>
+      <Link style={{ color: 'unset', textDecoration: 'none' }} to="/">
+        <ListItemButton id='e10' onClick={handleActive} className={active === 'e10' && 'active'}>
+          <ListItemIcon>
+            <Handshake />
+          </ListItemIcon>
+          <ListItemText primary="Đối tác" />
+        </ListItemButton>
+      </Link>
 
 
     </React.Fragment>
