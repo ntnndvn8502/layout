@@ -3,9 +3,9 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
-
+import { useNavigate } from 'react-router-dom';
+import { googleLogout } from '@react-oauth/google';
 import { Avatar } from '@mui/material';
-
 
 export default function Profile(prop) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -16,6 +16,12 @@ export default function Profile(prop) {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const nav = useNavigate();
+  const Logout = () => {
+    googleLogout();
+    sessionStorage.removeItem('token');
+    nav('/login');
+  }
 
 
   return (
@@ -48,7 +54,7 @@ export default function Profile(prop) {
       >
         <MenuItem sx={{ width: '200px' }} onClick={handleClose}>Profile</MenuItem>
         <MenuItem sx={{ width: '200px' }} onClick={handleClose}>My account</MenuItem>
-        <MenuItem sx={{ width: '200px' }} onClick={handleClose}>Logout</MenuItem>
+        <MenuItem sx={{ width: '200px' }} onClick={Logout}>Logout</MenuItem>
       </Menu>
 
 

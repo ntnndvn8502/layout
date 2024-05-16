@@ -3,7 +3,7 @@
   "version": "5.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
+    "dev": "vite ",
     "build": "vite build",
     "serve": "vite preview"
   },
@@ -16,15 +16,22 @@
     "@mui/icons-material": "^5.15.13",
     "@mui/material": "^5.15.13",
     "@mui/x-charts": "^6.19.5",
+    "@react-oauth/google": "^0.12.1",
+    "@splidejs/react-splide": "^0.7.12",
+    "buffer": "^6.0.3",
+    "jsonwebtoken": "^9.0.2",
+    "mkcert": "^3.2.0",
     "react": "latest",
     "react-dom": "latest",
+    "react-jwt": "^1.2.1",
     "react-multilevel-dropdown": "^4.0.0",
     "react-upload-gallery": "^0.4.1",
     "sass": "^1.72.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "latest",
-    "react-router-dom": "^6.22.3",
-    "vite": "latest"
+    "react-router-dom": "^6.23.1",
+    "vite": "latest",
+    "vite-plugin-mkcert": "^1.17.5"
   }
 }

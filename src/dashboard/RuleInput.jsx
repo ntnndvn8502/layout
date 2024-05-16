@@ -8,7 +8,13 @@ export default function RuleInput() {
     const [contents, setContents] = React.useState("");
 
     React.useEffect(() => {
-        fetch("https://test2-4689a-default-rtdb.firebaseio.com/regulation.json")
+        fetch("https://test2-4689a-default-rtdb.firebaseio.com/regulation.json",
+            {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+        )
             .then((res) => res.json())
             .then((data) => {
                 const collection = [];

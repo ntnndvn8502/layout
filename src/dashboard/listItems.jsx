@@ -38,7 +38,7 @@ export function MainListItems(prop) {
   }
   return (
     <React.Fragment>
-      <Link style={{ color: 'unset', textDecoration: 'none' }} to="/gian-hang">
+      <Link style={{ color: 'unset', textDecoration: 'none' }} to="/home">
         <ListItemButton id='e0' sx={{ display: 'flex', height: '65px' }} className={active === 'e0' && 'active'}>
           <ListItemIcon>
             <img src='/pasgo.png' alt='Logo' width={40} height={40} />
@@ -49,7 +49,7 @@ export function MainListItems(prop) {
         </ListItemButton >
       </Link>
 
-      <ListItemButton id='e1' onClick={handleActive} className={active === 'e1' && 'active'}>
+      {/* <ListItemButton id='e1' onClick={handleActive} className={active === 'e1' && 'active'}>
         <ListItemIcon>
           <Monitor />
         </ListItemIcon>
@@ -67,7 +67,15 @@ export function MainListItems(prop) {
           </ListItemButton>
         </Link>
 
-      </Collapse>}
+      </Collapse>} */}
+      <Link style={{ color: 'unset', textDecoration: 'none' }} to="/">
+        <ListItemButton id='e1' onClick={handleActive} className={active === 'e1' && 'active'}>
+          <ListItemIcon>
+            <Monitor />
+          </ListItemIcon>
+          <ListItemText primary="Bảng điều khiển" />
+        </ListItemButton>
+      </Link>
       <Link style={{ color: 'unset', textDecoration: 'none' }} to="/gian-hang">
         <ListItemButton id='e2' onClick={handleActive} className={active === 'e2' && 'active'}>
           <ListItemIcon>

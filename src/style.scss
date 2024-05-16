@@ -183,3 +183,43 @@ body {
   box-shadow: none;
   border: #1976d2 2px solid;
 }
+.slideImg {
+  width: 100%;
+  aspect-ratio: 7/5;
+  height: auto;
+}
+.welcome {
+  color: var(--Dark-000, #000);
+
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 0;
+  margin-bottom: 0;
+  span {
+    color: var(--Dark-000, #779341);
+
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}
+.login {
+  color: var(--Dark-000, #000);
+
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 8px;
+  margin-bottom: 30px;
+}
+.noAcc {
+  color: #8d8d8d;
+  text-decoration: none;
+}
+a.noAcc:hover {
+  color: #4285f4;
+}

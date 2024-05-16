@@ -3,6 +3,7 @@ import FullWCard from "./FullWCard";
 import MultilevelList from "./MultilevelList";
 import RuleInput from "./RuleInput";
 import { Box } from "@mui/material";
+import Data from "./Data";
 
 
 export default function Regulation() {
@@ -14,6 +15,9 @@ export default function Regulation() {
             </h4>
 
             <RuleInput />
+            <Box sx={{ my: 2 }}>
+                <Data />
+            </Box>
             <Box sx={{ mt: 1 }}>
                 <LineGraph />
             </Box>
