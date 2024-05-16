@@ -21,11 +21,13 @@ const token = sessionStorage.getItem('token');
 if (token) {
 
   a = true;
+  console.log('true');
 
 
 } else {
 
   a = false;
+  console.log('false');
 
 }
 var router = createBrowserRouter([{ path: '/login', element: <Login /> }]);
@@ -58,7 +60,7 @@ if (a) {
     },
     {
       path: '/login',
-      element: <Login />
+      element: <Navigate to="/home" />
     }
   ])
 } else {

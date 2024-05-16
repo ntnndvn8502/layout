@@ -1,8 +1,9 @@
 import { Box, TextField, Button, Grid, Typography } from '@mui/material';
 import { GoogleLogin } from '@react-oauth/google';
 import { decodeToken } from 'react-jwt';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, redirect } from 'react-router-dom';
 import { googleLogout } from '@react-oauth/google';
+
 
 
 
@@ -58,20 +59,19 @@ function Login() {
                         <h2 className='welcome'>Chào mừng bạn đến với <span>Pasgo</span> </h2>
                         <h1 className='login'>Đăng nhập</h1>
                         <Box>
-                            {token ?
-                                <Button onClick={Logout} variant="contained" color="secondary" sx={{ textTransform: 'none', px: 4, py: 1 }}>Đăng xuất</Button>
-                                : <GoogleLogin
-                                    onSuccess={credentialResponse => {
+                            <GoogleLogin
+                                onSuccess={credentialResponse => {
 
-                                        // const jsontoken = decodeToken(credentialResponse.credential);
-                                        // console.log(jsontoken);
-                                        sessionStorage.setItem('token', credentialResponse.credential);
-                                        nav('/home');
-                                    }}
-                                    onError={() => {
-                                        console.log('Login Failed');
-                                    }}
-                                />}
+                                    // const jsontoken = decodeToken(credentialResponse.credential);
+                                    // console.log(jsontoken);
+                                    sessionStorage.setItem('token', credentialResponse.credential);
+                                    window.location.href = '/home';
+
+                                }}
+                                onError={() => {
+                                    console.log('Login Failed');
+                                }}
+                            />
 
 
                         </Box>

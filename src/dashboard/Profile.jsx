@@ -20,7 +20,7 @@ export default function Profile(prop) {
   const Logout = () => {
     googleLogout();
     sessionStorage.removeItem('token');
-    nav('/login');
+    window.location.href = '/login';
   }
 
 
