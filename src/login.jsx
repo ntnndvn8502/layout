@@ -57,7 +57,7 @@ function Login() {
                 <Grid sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', py: '4rem' }} item xs={4}>
                     <Box sx={{ borderRadius: 5, bgcolor: 'rgba(255, 255, 255, 0.75);', height: '100%', width: '100%', p: 4, display: 'flex', flexDirection: 'column' }}>
                         <h2 className='welcome'>Chào mừng bạn đến với <span>Pasgo</span> </h2>
-                        <h1 className='login'>Đăng nhập</h1>
+                        <h1 className='login'>Đăng nhập 2</h1>
                         <Box>
                             <GoogleLogin
                                 onSuccess={credentialResponse => {
