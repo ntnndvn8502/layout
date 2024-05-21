@@ -3,11 +3,10 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
-import { useNavigate } from 'react-router-dom';
 import { googleLogout } from '@react-oauth/google';
 import { Avatar } from '@mui/material';
 
-export default function Profile(prop) {
+export default function Profile() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -16,8 +15,8 @@ export default function Profile(prop) {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const nav = useNavigate();
-  const Logout = () => {
+
+  const logout = () => {
     googleLogout();
     sessionStorage.removeItem('token');
     window.location.href = '/login';
@@ -26,8 +25,6 @@ export default function Profile(prop) {
 
   return (
     <div>
-
-
       <Button sx={{ minWidth: 200 }}
         id="basic-button"
         aria-controls={open ? 'basic-menu' : undefined}
@@ -54,7 +51,7 @@ export default function Profile(prop) {
       >
         <MenuItem sx={{ width: '200px' }} onClick={handleClose}>Profile</MenuItem>
         <MenuItem sx={{ width: '200px' }} onClick={handleClose}>My account</MenuItem>
-        <MenuItem sx={{ width: '200px' }} onClick={Logout}>Logout</MenuItem>
+        <MenuItem sx={{ width: '200px' }} onClick={logout}>Logout</MenuItem>
       </Menu>
 
 

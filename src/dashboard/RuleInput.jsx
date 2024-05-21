@@ -8,7 +8,7 @@ export default function RuleInput() {
     const [contents, setContents] = React.useState("");
 
     React.useEffect(() => {
-        fetch("https://test2-4689a-default-rtdb.firebaseio.com/regulation.json",
+        fetch("https://nghia-bb3a1-default-rtdb.asia-southeast1.firebasedatabase.app/regulation.json",
             {
                 headers: {
                     'Content-Type': 'application/json'
@@ -32,12 +32,12 @@ export default function RuleInput() {
         e.preventDefault();
         const content = contents.split('\n');
         const regulation = { name, content };
-        fetch("https://test2-4689a-default-rtdb.firebaseio.com/regulation.json", {
+        fetch("https://nghia-bb3a1-default-rtdb.asia-southeast1.firebasedatabase.app/regulation.json", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(regulation)
         }).then(() => {
-            fetch("https://test2-4689a-default-rtdb.firebaseio.com/regulation.json")
+            fetch("https://nghia-bb3a1-default-rtdb.asia-southeast1.firebasedatabase.app/regulation.json")
                 .then((res) => res.json())
                 .then((data) => {
                     const collection = [];

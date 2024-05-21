@@ -21,7 +21,7 @@ const token = sessionStorage.getItem('token');
 if (token) {
 
   a = true;
-  console.log('true');
+  console.log(decodeToken(token));
 
 
 } else {

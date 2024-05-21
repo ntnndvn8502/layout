@@ -33,6 +33,8 @@ import { googleLogout } from '@react-oauth/google';
 import DesignedPalette from './DesignPalette';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 
 
@@ -51,6 +53,7 @@ function Copyright(props) {
 
 const drawerWidth = 270;
 const navcolor = 'white';
+
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -133,6 +136,22 @@ export default function Dashboard() {
     }
   }
   const defaultTheme = createTheme(DesignedPalette(mode));
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const openEl = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  const Notifications = [
+    { title: 'You have a new message', content: 'Please review your order to get voucher', time: '18:04 11/5/2024' },
+    { title: 'You have a new message', content: 'Please review your order to get voucher', time: '11:05 9/5/2024' },
+    { title: 'You have a new message', content: 'Please review your order to get voucher', time: '18:04 11/5/2024' },
+    { title: 'You have a new message', content: 'Please review your order to get voucher', time: '11:05 9/5/2024' },
+    { title: 'You have a new message', content: 'Please review your order to get voucher', time: '18:04 11/5/2024' },
+    { title: 'You have a new message', content: 'Please review your order to get voucher', time: '11:05 9/5/2024' },
+  ]
 
 
   return (
@@ -151,14 +170,40 @@ export default function Dashboard() {
               </Grid>
               <Grid item md={6}>
                 <Container sx={{ display: 'flex', flexDirection: 'row-reverse' }}>
-                  <Profile colormode={defaultTheme.palette.mode} />
-                  <Button sx={{ minWidth: 50 }} variant='text'>
+                  <Profile />
+                  <Button onClick={handleClick} sx={{ minWidth: 50 }} variant='text'>
                     <Box >
                       <Badge color='warning' variant="dot">
                         <NotificationsNoneIcon color='custom' />
                       </Badge>
                     </Box>
                   </Button>
+                  <Menu
+
+                    id="basic-menu"
+                    anchorEl={anchorEl}
+                    open={openEl}
+                    onClose={handleClose}
+                    MenuListProps={{
+                      'aria-labelledby': 'basic-button',
+
+                      sx: { maxHeight: '400px' }
+                    }}
+                  >
+                    {Notifications.map((item) =>
+                      <MenuItem sx={{ width: '400px' }} onClick={handleClose}>
+                        <Box>
+                          <div><b>{item.title}</b></div>
+                          <div>{item.content}</div>
+                          <div><i>{item.time}</i></div>
+                        </Box>
+
+                      </MenuItem>
+                    )}
+
+                    {/* // <MenuItem sx={{ width: '200px' }} onClick={handleClose}>My account</MenuItem>
+                    // <MenuItem sx={{ width: '200px' }} onClick={handleClose}>Logout</MenuItem> */}
+                  </Menu>
                   <Button onClick={toggleMode} color='custom' sx={{ minWidth: 50 }} variant='text' >
                     {mode === "light" ? <DarkModeOutlinedIcon sx={{ marginTop: '3px' }} /> : <LightModeOutlinedIcon sx={{ marginTop: '3px' }} />}
 
@@ -223,6 +268,7 @@ export default function Dashboard() {
         >
           <Toolbar />
           <Box sx={{ p: '10px' }}>
+
             <Outlet />
           </Box>
 
